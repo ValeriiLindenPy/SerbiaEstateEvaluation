@@ -4,7 +4,7 @@ from joblib import load
 from pathlib import Path  # Importing pathlib
 
 
-# Constructing the path to district_data.csv
+# Path for externals
 current_directory = Path(__file__)
 district_data_path = current_directory.parent / 'district-data.csv'
 model_path = current_directory.parent / 'flatprice-predictor.joblib'

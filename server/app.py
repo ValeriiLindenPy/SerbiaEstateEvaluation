@@ -35,10 +35,9 @@ def predict():
         
         predicted_price = predict_price_from_input(district, num_rooms, size_sqm)
     
-    # Fetch data for SelectFields
+
     district_list, rooms_number_list = get_parametral_data()
     
-    # Populate SelectFields
     form.district.choices = [(district, district) for district in district_list]
     form.num_rooms.choices = [(str(room), str(room)) for room in rooms_number_list]
     
