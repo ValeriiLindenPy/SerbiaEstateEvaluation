@@ -1,4 +1,4 @@
-# SerbiaNoviSadEstateEvaluation (in development)
+# Serbia Novi Sad Estate Evaluation (in development)
 Real estate prices calculation analysis in Serbia, Novi Sad
 
 
