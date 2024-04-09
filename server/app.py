@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from flask_wtf import FlaskForm
 from wtforms import StringField, FloatField, SelectField, SubmitField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, NumberRange
 from utils import load_externals, predict_price_from_input, get_parametral_data
 
 app = Flask(__name__)
@@ -16,8 +16,8 @@ class PredictForm(FlaskForm):
     num_rooms_choices = [(str(room), str(room)) for room in rooms_number_list]
     district = SelectField('District', choices=district_choices, validators=[DataRequired()])
     num_rooms = SelectField('Number of Rooms', choices=num_rooms_choices, validators=[DataRequired()])
-    size_sqm = FloatField('Size (m²)', validators=[DataRequired()])
-    submit = SubmitField('Predict')
+    size_sqm = FloatField('Size (m²)', validators=[DataRequired(), NumberRange(min=16, max=280)])
+    submit = SubmitField('Calculate')
 
 @app.route("/")
 def hello_world():

@@ -7,31 +7,53 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Predict Price</h2>
-        <form method="POST" action="/predict">
-            {{ form.hidden_tag() }}
-            <div class="form-group">
-                {{ form.district.label }}
-                {{ form.district(class="form-control") }}
+    <div class="container" >
+        <div class="row align-items-center" style="height: 100vh;">
+            <div class="col">
+                <div class="text-center"><h2>Predict Price</h2></div>
+                
+                <form method="POST" action="/predict">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.district.label }}
+                        {{ form.district(class="form-control") }}
+                    </div>
+                    <!-- Display district validation errors -->
+                    {% for error in form.district.errors %}
+                        <div class="alert alert-danger">{{ error }}</div>
+                    {% endfor %}
+                    
+                    <div class="form-group">
+                        {{ form.num_rooms.label }}
+                        {{ form.num_rooms(class="form-control") }}
+                    </div>
+                    <!-- Display num_rooms validation errors -->
+                    {% for error in form.num_rooms.errors %}
+                        <div class="alert alert-danger">{{ error }}</div>
+                    {% endfor %}
+                    
+                    <div class="form-group">
+                        {{ form.size_sqm.label }}
+                        {{ form.size_sqm(class="form-control") }}
+                    </div>
+                    <!-- Display size_sqm validation errors -->
+                    {% for error in form.size_sqm.errors %}
+                        <div class="alert alert-danger">{{ error }}</div>
+                    {% endfor %}
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" style="font-size: 1.7em;">Calculate</button>
+                    </div>
+                </form>
+                
+                {% if predicted_price %}
+                    <div class="mt-3">
+                        <h2>Predicted Price:</h2>
+                        <h4>Predicted price for a property with {{ form.num_rooms.data }} rooms, size {{ form.size_sqm.data }} m² in {{ form.district.data.capitalize() }}: <b>{{ predicted_price }}</b> EUR</h4>
+                    </div>
+                {% endif %}
             </div>
-            <div class="form-group">
-                {{ form.num_rooms.label }}
-                {{ form.num_rooms(class="form-control") }}
-            </div>
-            <div class="form-group">
-                {{ form.size_sqm.label }}
-                {{ form.size_sqm(class="form-control") }}
-            </div>
-            <button type="submit" class="btn btn-primary">Predict</button>
-        </form>
-        {% if predicted_price %}
-        <div class="mt-3">
-            <h2>Predicted Price:</h2>
-            <h4>Predicted price for a property with {{ form.num_rooms.data }} rooms, size {{ form.size_sqm.data }} m² in {{ form.district.data.capitalize() }}: <b>{{ predicted_price }}</b> EUR</h4>
         </div>
-        {% endif %}
     </div>
-    
 </body>
 </html>
