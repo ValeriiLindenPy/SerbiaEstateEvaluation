@@ -1,7 +1,31 @@
-# Serbia Novi Sad Estate Evaluation (in development)
-Real estate prices calculation analysis in Serbia, Novi Sad.
+# Real Estate Price Prediction Project
 
+This project aims to predict real estate prices based on various features such as the number of rooms, size in square meters, and district. The dataset used in this project contains information about real estate properties including their prices, sizes, number of rooms, and district location.
 
+## Data Preprocessing
+
+- The dataset is initially loaded from an Excel file (`REdata.xlsx`).
+- Data exploration is performed to understand its shape, missing values, and descriptive statistics.
+- Outliers are detected using z-score and removed from the dataset.
+- Data visualization is used to explore relationships between variables, such as price per square meter vs. size.
+
+## Feature Engineering
+
+- Price per square meter is calculated and added as a new feature.
+- The `Subtitle values` column is preprocessed by converting text to lowercase and removing punctuation.
+- District and street information is extracted from the `Subtitle values` column and added as new features.
+- Dummy variables are created for the district feature to handle categorical data.
+
+## Model Building
+
+- Linear Regression model is trained on the preprocessed data to predict real estate prices.
+- The dataset is split into training and testing sets to evaluate the model's performance.
+- Model evaluation is performed using the R-squared score.
+
+## Price Prediction Function
+
+- A function is created to predict the price of a real estate property based on input parameters such as district, number of rooms, and size.
+- This function utilizes the trained Linear Regression model and the preprocessed dataset.
 
 
 ## Data discription
@@ -71,9 +95,6 @@ Real estate prices calculation analysis in Serbia, Novi Sad.
 
 
 
-
-
-
 ## Price per m² and Size (m²) distribution by numers of room
 
 ![Rooms Plot](img/rooms_plot.jpg)
@@ -83,7 +104,17 @@ Real estate prices calculation analysis in Serbia, Novi Sad.
 
 ![Rooms Plot](img/mean_by_district.png)
 
-## Project UI 
+## User Interface with Flask
+
+- A Flask web application (`app.py`) is created to provide a user interface for the price prediction model.
+- The application allows users to input parameters such as district, number of rooms, and size to get a predicted price.
+- The application is deployed on AWS EC2 for accessibility.
 
 A link to UI of the project: [Home page of the project](http://54.234.56.161:8083/)
 
+## Repository Structure
+
+- `data`: Contains the dataset used in the project.
+- `server`: Contains Flask application files.
+- `SerbiaNoviDadEstateEvaluation.ipynb`: Jupyter Notebook containing the project code.
+- `README.md`: Overview of the project and instructions on how to run it.
