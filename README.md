@@ -1,6 +1,6 @@
 # Real Estate Price Prediction in Novi Sad
 
-This project aims to predict real estate prices based on various features such as the number of rooms, size in square meters, and district. The dataset used in this project contains information about real estate properties including their prices, sizes, number of rooms, and district location.
+This project aims to predict real estate prices based on various features such as the number of rooms, size in square meters, and district. The dataset used in this project contains information about real estate properties including their prices, sizes, number of rooms, and district location. The project is based on data from the first quarter of 2024.
 
 ## Data Preprocessing
 
