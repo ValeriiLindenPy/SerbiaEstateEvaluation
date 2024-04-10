@@ -30,6 +30,12 @@ This project aims to predict real estate prices based on various features such a
 
 ## Data discription
 
+- The dataset contains information on 993 real estate properties.
+- On average, a property has approximately 2.42 rooms and a size of 60.69 square meters.
+- The average price per square meter is approximately €2,346.49, with a significant standard deviation of €535.93, indicating variability in property prices.
+- Prices range from €25,850.00 to €754,490.00, with most properties falling within the range of €89,600.00 to €168,000.00.
+- The dataset includes properties with sizes ranging from 16 square meters to 274 square meters and with room numbers ranging from 0.5 to 5.
+
 |               | Price, EUR | Number of rooms | Size (m²) | Price per m², EUR |
 |---------------|------------|-----------------|-----------|-------------------|
 | count         | 993.000    | 993.000         | 993.000   | 993.000           |
@@ -44,7 +50,14 @@ This project aims to predict real estate prices based on various features such a
 
 
 
-## By District
+## Distribution By District
+
+- Districts with higher mean prices tend to have a wider range of property prices, as seen from the higher standard deviations.
+- Some districts exhibit relatively consistent pricing, with smaller standard deviations indicating less variability in property prices.
+- Districts like "Lipov Gaj" and "Spens" stand out for having high mean prices and relatively high standard deviations, suggesting a wide range of property prices within these areas.
+- On the other hand, districts like "Sarengrad" and "Satelit" have lower mean prices and smaller standard deviations, indicating more consistent pricing across properties.
+- Despite some districts having a lack of data, the table still represents the current view of the real estate market in Novi Sad, providing valuable insights for buyers, sellers, and real estate investors to understand pricing trends and make informed decisions.
+
 
 | District               | Count | Mean Price | Min Price | Max Price | Price Std |
 |------------------------|-------|------------|-----------|-----------|-----------|
@@ -93,14 +106,29 @@ This project aims to predict real estate prices based on various features such a
 | šonsi                  | 6     | 99800.00   | 64890     | 144200    | 32483.98  |
 | železnička stanica     | 17    | 122234.12  | 77250     | 270000    | 53046.68  |
 
+### The table provides statistics on real estate prices for various districts. Here's a brief overview:
 
+- **Count**: Indicates the number of properties available in each district.
+- **Mean Price**: Represents the average price of properties in the district.
+- **Min Price**: Shows the lowest price observed in the district.
+- **Max Price**: Indicates the highest price observed in the district.
+- **Price Std**: Reflects the standard deviation of prices within the district.
 
 ## Price per m² and Size (m²) distribution by numers of room
+
+### Conclusions:
+
+- The plot illustrates an obvious tendency of properties to shift towards higher values in terms of size as the number of rooms increases. This suggests that properties with more rooms tend to have larger sizes.
+- Regardless of the number of rooms, there is a noticeable clustering of price per square meter values between €1500 to €3500. This indicates a common price range across different property sizes, suggesting consistent pricing trends in the real estate market in Novi Sad.
+
 
 ![Rooms Plot](img/rooms_plot.jpg)
 
 
 ## Mean Price per District (Sorted by Mean Price)
+
+- We can observe the common trend where properties closer to the historical center tend to have higher prices, indicating the influence of location on property values.
+- Some outliers such as Lipov Gaj or Jugovićevo appear at the top of the list, primarily due to the lack of data rather than indicative of exceptionally high property prices in those areas.
 
 ![Rooms Plot](img/mean_by_district.png)
 
