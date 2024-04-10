@@ -76,12 +76,12 @@ Real estate prices calculation analysis in Serbia, Novi Sad.
 
 ## Price per m² and Size (m²) distribution by numers of room
 
-![Rooms Plot](rooms_plot.jpg)
+![Rooms Plot](img/rooms_plot.jpg)
 
 
 ## Mean Price per District (Sorted by Mean Price)
 
-![Rooms Plot](mean_by_district.png)
+![Rooms Plot](img\mean_by_district.png)
 
 ## Project UI 
 
